@@ -1,0 +1,26 @@
+{% extends 'waste/base.html' %}
+{% block body %}
+<body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                <div class="card-header text-white ">
+                    <div class="shadow-lg p-3 mb-5 bg-secondary text-white  rounded">
+                        <h2>Issue</h2>
+                    </div>
+                </div>
+                    <div class="card-body">
+                       <form method="POST">
+                           {% csrf_token %}
+                           {{ form }}
+                            <button class="col-md-7 btn btn-primary" type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

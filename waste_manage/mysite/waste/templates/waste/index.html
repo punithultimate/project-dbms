@@ -1,0 +1,32 @@
+{% extends 'waste/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body %}
+        {% for issue in issue_list %}
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <img height="235px" class="card" src="{{ issue.issue_image}}"/>
+            </div>
+            <div class="col-md-4">
+                <h3>{{ issue.issue_place }}</h3>
+                <br>
+                <h5>{{ issue.issue_desc }}</h5>
+                <br>
+                <h6>{{ issue.issue_period }} days</h6>
+            </div>
+            <div class="col-md-2">
+                <a href="{% url 'waste:detail' issue.id %}" class="btn btn-success">details</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% endblock %}
+
+</body>
+</html>
+

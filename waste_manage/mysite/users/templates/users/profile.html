@@ -1,0 +1,42 @@
+{% extends 'waste/base.html' %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{{ user.profile.image.url }}" height="250px" width="250px">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h2>
+                                      UserName :  {{ user.username }}
+                                    </h2>
+                                    <h3>
+                                        social worker
+                                    </h3>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">go to home</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+<div class="background: -webkit-linear-gradient(left, #3931af, #00c6ff);"></div>
+{% endblock %}
